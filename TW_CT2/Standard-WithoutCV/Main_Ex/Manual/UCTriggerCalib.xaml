@@ -1,0 +1,61 @@
+﻿<BasicClass:BaseControl  x:Class="Main_EX.UCTriggerCalib"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:ControlLib="clr-namespace:ControlLib;assembly=ControlLib"
+             xmlns:BasicClass="clr-namespace:BasicClass;assembly=BasicClass"
+             mc:Ignorable="d" 
+             d:DesignHeight="130" d:DesignWidth="240" BorderBrush="#FF00D1E5" BorderThickness="1">
+    <UserControl.Resources >
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />-->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid HorizontalAlignment="Stretch" Margin="0" Name="grid1" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <ComboBox BorderBrush="#FF00D1E5" Height="35" HorizontalAlignment="Center" Margin="0" Name="cboPos" VerticalAlignment="Center" Width="140" Grid.Column="1" ToolTip="算子插入的相对位置(非拍照位置)" />
+            <Label Content="算法序号:" Height="30" HorizontalAlignment="Stretch" Margin="0" Name="label2" VerticalAlignment="Center" Width="60" ToolTip="算子插入的相对位置" />
+        </Grid>
+        <Grid HorizontalAlignment="Stretch" Margin="0" Name="grid2" VerticalAlignment="Stretch" Grid.Row="1" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <ComboBox BorderBrush="#FF00D1E5" Grid.Column="1" Height="35" HorizontalAlignment="Center" Margin="0" Name="cboType" VerticalAlignment="Center" Width="140" >
+                <ComboBoxItem Content="旋转中心" IsSelected="True" />
+                <ComboBoxItem Content="相机校准"/>
+                <ComboBoxItem Content="轴校准"/>
+                <ComboBoxItem Content="相机投影校准"/>
+                <ComboBoxItem Content="手眼校准"/>
+                <ComboBoxItem Content="多目校准"/>
+            </ComboBox>
+            <Label Content="校准类型:" Height="28" HorizontalAlignment="Stretch" Margin="0" Name="label1" VerticalAlignment="Center" Width="60" />
+        </Grid>
+        <Grid Grid.Row="2" HorizontalAlignment="Stretch" Margin="0" Name="grid3" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Content="拍照序号:" Height="28" HorizontalAlignment="Stretch" Margin="0" Name="lblNoTrigger" VerticalAlignment="Center" Width="60" />
+            <ControlLib:DoubleUpDown BorderBrush="#FF00D1E5" Height="30" HorizontalAlignment="Center" Increment="1" Margin="1" Maximum="Infinity" Minimum="1" Name="dudNoTrigger" Value="1" Width="60" Grid.Column="1" />
+            <Button BorderBrush="#FF00D1E5" Content="触  发" Height="30" HorizontalAlignment="Center" Margin="0" Name="btnTrigger" VerticalAlignment="Center" Width="75" Grid.Column="2" Click="btnTrigger_Click" />
+        </Grid>
+    </Grid>
+</BasicClass:BaseControl>

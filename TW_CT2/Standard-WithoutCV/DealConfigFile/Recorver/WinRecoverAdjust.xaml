@@ -1,0 +1,67 @@
+﻿<BasicClass:BaseWindow x:Class="DealConfigFile.WinRecoverAdjust"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:ControlLib="clr-namespace:ControlLib;assembly=ControlLib" 
+        xmlns:BasicClass="clr-namespace:BasicClass;assembly=BasicClass"
+        mc:Ignorable="d"
+        Title="调整值恢复" Height="620" Width="1000" Loaded="BaseWindow_Loaded" Closing="BaseWindow_Closing" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />-->
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </Window.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ControlLib:NGroupBox Grid.Row="0" TitleBrush="#FF00D1E5" Foreground="Black" HorizontalAlignment="Stretch" Header="文件目录" Margin="2,2,2,60" BorderBrush="#FF00D1E5" BorderThickness="1">
+            <Grid Name="gdLayout">
+                <DataGrid AllowDrop="True" AreRowDetailsFrozen="True" AutoGenerateColumns="False" Background="White" BorderThickness="1" CanUserAddRows="False" CanUserResizeColumns="False" CanUserSortColumns="False" FontSize="13" GridLinesVisibility="All" HorizontalAlignment="Stretch" IsReadOnly="true" ItemsSource="{Binding}" Name="dgDir" VerticalAlignment="Stretch" Margin="1" SelectionChanged="dgDir_SelectionChanged">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding No}" Header="" Width="35" IsReadOnly="True"/>
+                        <DataGridTextColumn Binding="{Binding Date}" Header="日期" Width="100" IsReadOnly="True"/>
+                        <DataGridTextColumn Binding="{Binding Time}" Header="型号-时间" Width="150" />
+                        <DataGridTextColumn Binding="{Binding PathSourceShow}" Header="文件原路径" Width="550" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </ControlLib:NGroupBox>
+
+
+        <ControlLib:NGroupBox Foreground="Black" Header="参数列表" HorizontalAlignment="Stretch" TitleBrush="#FF00D1E5" Margin="2" Grid.Column="1">
+            <Grid Name="grid2">
+                <DataGrid AllowDrop="True" AreRowDetailsFrozen="True" AutoGenerateColumns="False" Background="White" BorderThickness="1" CanUserAddRows="False" CanUserResizeColumns="False" CanUserSortColumns="False" FontSize="13" GridLinesVisibility="All" HorizontalAlignment="Stretch" IsReadOnly="true" ItemsSource="{Binding}" Margin="1" Name="dgFile" VerticalAlignment="Stretch">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding No}" Header="" IsReadOnly="True" Width="35" />
+                        <DataGridTextColumn Binding="{Binding Name}" Header="名称" Width="90" />
+                        <DataGridTextColumn Binding="{Binding Value1}" Header="Value1" Width="90" />
+                        <DataGridTextColumn Binding="{Binding Value2}" Header="Value2" Width="90" />
+                        <DataGridTextColumn Binding="{Binding Value3}" Header="Value3" Width="90" />
+                        <DataGridTextColumn Binding="{Binding Annotation}" Header="注释" Width="90" />
+                    </DataGrid.Columns>
+                </DataGrid>
+            </Grid>
+        </ControlLib:NGroupBox>
+
+        <Grid HorizontalAlignment="Stretch" Height="52" Margin="0" VerticalAlignment="Bottom" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ControlLib:ButtonBase Content="刷  新" Height="30" HorizontalAlignment="Center" Margin="0" x:Name="btnRefresh" VerticalAlignment="Center" Width="120" FontSize="12"  Background="#FFF7F7F7" BorderBrush="#FFCCCCCC" Click="btnRefresh_Click" />
+
+            <ControlLib:ButtonBase Content="恢复历史参数" Height="30" HorizontalAlignment="Center" Margin="0" x:Name="btnRecover" VerticalAlignment="Center" Width="120" FontSize="12"  Background="#FFF7F7F7" BorderBrush="#FFCCCCCC"  Grid.Column="1" Click="btnRecover_Click" />
+        </Grid>
+    </Grid>
+</BasicClass:BaseWindow>

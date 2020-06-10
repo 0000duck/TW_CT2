@@ -1,0 +1,577 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3BDFA0A4-29AC-4144-876E-B8F6D9539166}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Main</RootNamespace>
+    <AssemblyName>机器视觉控制处理软件</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\机器视觉控制处理软件\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;Debug</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>机器人.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;Debug</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\机器视觉控制处理软件\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;Debug</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BasicClass, Version=1.0.2018.1229, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\BasicClass.dll</HintPath>
+    </Reference>
+    <Reference Include="BasicComprehensive, Version=1.0.2018.1213, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\BasicComprehensive.dll</HintPath>
+    </Reference>
+    <Reference Include="BasicDisplay, Version=1.0.2018.1213, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\BasicDisplay.dll</HintPath>
+    </Reference>
+    <Reference Include="CalibDataManager">
+      <HintPath>..\DLL\CalibDataManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Metro, Version=0.3.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\DLL\Caliburn.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Metro.Core, Version=0.3.0.0, Culture=neutral, PublicKeyToken=null">
+      <HintPath>..\DLL\Caliburn.Metro.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Caliburn.Micro, Version=1.4.0.0, Culture=neutral, PublicKeyToken=8e5891231f2ed21f">
+      <HintPath>..\DLL\Caliburn.Micro.dll</HintPath>
+    </Reference>
+    <Reference Include="Camera, Version=1.0.2018.1222, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Camera.dll</HintPath>
+    </Reference>
+    <Reference Include="Common, Version=1.0.2018.1213, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\Common.dll</HintPath>
+    </Reference>
+    <Reference Include="ControlLib, Version=1.0.2018.1213, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\ControlLib.dll</HintPath>
+    </Reference>
+    <Reference Include="DealAlgorithm, Version=1.0.2018.1213, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DealAlgorithm.dll</HintPath>
+    </Reference>
+    <Reference Include="DealCalibrate, Version=1.0.2019.621, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DealCalibrate.dll</HintPath>
+    </Reference>
+    <Reference Include="DealComInterface, Version=1.0.2018.1213, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DealComInterface.dll</HintPath>
+    </Reference>
+    <Reference Include="DealCommunication, Version=1.0.2018.1213, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DealCommunication.dll</HintPath>
+    </Reference>
+    <Reference Include="DealComprehensive, Version=1.0.2018.1213, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DealComprehensive.dll</HintPath>
+    </Reference>
+    <Reference Include="DealConfigFile">
+      <HintPath>..\DLL\DealConfigFile.dll</HintPath>
+    </Reference>
+    <Reference Include="DealConfigParAligner, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DealConfigParAligner.dll</HintPath>
+    </Reference>
+    <Reference Include="DealDisplay, Version=1.0.2018.1217, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DealDisplay.dll</HintPath>
+    </Reference>
+    <Reference Include="DealDraw, Version=1.0.2018.1231, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DealDraw.dll</HintPath>
+    </Reference>
+    <Reference Include="DealFile">
+      <HintPath>..\DLL\DealFile.dll</HintPath>
+    </Reference>
+    <Reference Include="DealGeometry, Version=1.0.2018.1213, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DealGeometry.dll</HintPath>
+    </Reference>
+    <Reference Include="DealGrabImage, Version=1.0.2018.1217, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DealGrabImage.dll</HintPath>
+    </Reference>
+    <Reference Include="DealHelp, Version=1.0.2018.1213, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DealHelp.dll</HintPath>
+    </Reference>
+    <Reference Include="DealImageProcess, Version=1.0.2018.1213, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DealImageProcess.dll</HintPath>
+    </Reference>
+    <Reference Include="DealImageProcess_EX, Version=1.0.2018.1213, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DealImageProcess_EX.dll</HintPath>
+    </Reference>
+    <Reference Include="DealInOutput, Version=1.0.2018.1213, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DealInOutput.dll</HintPath>
+    </Reference>
+    <Reference Include="DealLog, Version=1.0.2018.1229, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DealLog.dll</HintPath>
+    </Reference>
+    <Reference Include="DealMath, Version=1.0.2018.1213, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DealMath.dll</HintPath>
+    </Reference>
+    <Reference Include="DealPLC, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DealPLC.dll</HintPath>
+    </Reference>
+    <Reference Include="DealResult, Version=1.0.2018.1219, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DealResult.dll</HintPath>
+    </Reference>
+    <Reference Include="DealResult_EX">
+      <HintPath>..\DLL\DealResult_EX.dll</HintPath>
+    </Reference>
+    <Reference Include="DealRobot, Version=1.0.2018.926, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DealRobot.dll</HintPath>
+    </Reference>
+    <Reference Include="DealTool, Version=1.0.2018.926, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DealTool.dll</HintPath>
+    </Reference>
+    <Reference Include="DealWorkFlow, Version=1.0.2018.1213, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\DealWorkFlow.dll</HintPath>
+    </Reference>
+    <Reference Include="halcondotnet, Version=12.0.0.0, Culture=neutral, PublicKeyToken=4973bed59ddbf2b8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\halcondotnet.dll</HintPath>
+    </Reference>
+    <Reference Include="MahApps.Metro, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f4fb5a3c4d1e5b4f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\MahApps.Metro.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ModulePackage">
+      <HintPath>..\DLL\ModulePackage.dll</HintPath>
+    </Reference>
+    <Reference Include="NLog, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\NLog.dll</HintPath>
+    </Reference>
+    <Reference Include="ParComprehensive, Version=1.0.2018.1213, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\ParComprehensive.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework.Luna" />
+    <Reference Include="SetComprehensive, Version=1.0.2018.1213, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\SetComprehensive.dll</HintPath>
+    </Reference>
+    <Reference Include="SetPar, Version=1.0.2018.1221, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DLL\SetPar.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WPFToolkit">
+      <HintPath>..\DLL\WPFToolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="WPFToolkit.Design">
+      <HintPath>..\DLL\WPFToolkit.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Xceed.Wpf.Toolkit">
+      <HintPath>..\DLL\Xceed.Wpf.Toolkit.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\MainCom.cs" />
+    <Compile Include="Common\MainCom.Custom.cs" />
+    <Compile Include="Common\MainCom.Robot.cs" />
+    <Compile Include="DealComprehensiveResult\Base\BaseDealComprehensiveResult_Main.cs" />
+    <Compile Include="DealComprehensiveResult\Base\BaseDealComprehensiveResult_Main.MultCam.cs" />
+    <Compile Include="DealComprehensiveResult\DealComprehensiveResult4.cs" />
+    <Compile Include="DealComprehensiveResult\DealComprehensiveResult5.cs" />
+    <Compile Include="DealComprehensiveResult\DealComprehensiveResult6.cs" />
+    <Compile Include="DealComprehensiveResult\DealComprehensiveResult7.cs" />
+    <Compile Include="DealComprehensiveResult\DealComprehensiveResult8.cs" />
+    <Compile Include="DealComprehensiveResult\DealComprehensiveResult_Init\DealComprehensiveResult1.Init.cs" />
+    <Compile Include="DealComprehensiveResult\DealComprehensiveResult_Init\DealComprehensiveResult2.Init.cs" />
+    <Compile Include="DealComprehensiveResult\DealComprehensiveResult_Init\DealComprehensiveResult3.Init.cs" />
+    <Compile Include="DealComprehensiveResult\DealComprehensiveResult_Init\DealComprehensiveResult4.Init.cs" />
+    <Compile Include="DealComprehensiveResult\DealComprehensiveResult_Init\DealComprehensiveResult5.Init.cs" />
+    <Compile Include="DealComprehensiveResult\DealComprehensiveResult_Init\DealComprehensiveResult6.Init.cs" />
+    <Compile Include="DealComprehensiveResult\DealComprehensiveResult_Init\DealComprehensiveResult7.Init.cs" />
+    <Compile Include="DealComprehensiveResult\DealComprehensiveResult_Init\DealComprehensiveResult8.Init.cs" />
+    <Compile Include="DealComprehensiveResult\Interface\CursoryLocation.cs" />
+    <Compile Include="DealComprehensiveResult\Interface\SupportFunc.cs" />
+    <Compile Include="File\ExcelMain.cs" />
+    <Compile Include="File\IniMain.cs" />
+    <Compile Include="File\Regedit\RegeditMain.CIM.cs" />
+    <Compile Include="File\Regedit\RegeditMain.Custom.cs" />
+    <Compile Include="File\XmlFileMain.cs" />
+    <Compile Include="MainUI\WinMain1.Init.cs" />
+    <Compile Include="MainUI\WinMain1.xaml.cs">
+      <DependentUpon>WinMain1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainUI\WinMain2.Init.cs" />
+    <Compile Include="MainUI\WinMain2.xaml.cs">
+      <DependentUpon>WinMain2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainUI\WinMainSmall2.Init.cs" />
+    <Compile Include="MainUI\WinMainSmall2.xaml.cs">
+      <DependentUpon>WinMainSmall2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow\CameraAndDisplay\MainWindow.Camera.Trigger.cs" />
+    <Compile Include="MainWindow\Capacity\ProductivityReport.xaml.cs">
+      <DependentUpon>ProductivityReport.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainWindow\CIM\MainWindow.CIM.cs" />
+    <Compile Include="MainWindow\ComPort\MainWindow.ComPort.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow\IO\MainWindow.IO.cs" />
+    <Compile Include="MainWindow\MainWindow.cs" />
+    <Compile Include="MainWindow\MainWindow.Monitor.cs" />
+    <Compile Include="MainWindow\MainWndow.Custom.cs" />
+    <Compile Include="DealComprehensiveResult\MainWindow.TrrigerDealResult.cs" />
+    <Compile Include="MainWindow\Manual\MainWindow.Manual.cs" />
+    <Compile Include="MainWindow\ModelParams\ModelParams.CST.cs" />
+    <Compile Include="MainWindow\ModelParams\ModelParams.Define.cs" />
+    <Compile Include="MainWindow\ModelParams\ModelParams.Modules.cs" />
+    <Compile Include="MainWindow\ModelParams\ModelParams.Pick.cs" />
+    <Compile Include="MainWindow\ModelParams\ModelParams.Precise.cs" />
+    <Compile Include="MainWindow\ModelParams\ModelParams.Property.cs" />
+    <Compile Include="MainWindow\ModelParams\ModelParams.Enums.cs" />
+    <Compile Include="MainWindow\PLC\MainWindow.PLC.Func.cs" />
+    <Compile Include="MainWindow\Robot\Robot1\MainWindow.Robot.Reserve.cs" />
+    <Compile Include="File\Regedit\RegeditMain.cs" />
+    <Compile Include="MainWindow\PLC\MainWindow.PLC.ReserveTrrigger.cs" />
+    <Compile Include="DealComprehensiveResult\DealComprehensiveResult2.cs" />
+    <Compile Include="DealComprehensiveResult\DealComprehensiveResult3.cs" />
+    <Compile Include="DealComprehensiveResult\DealComprehensiveResult1.cs" />
+    <Compile Include="MainWindow\Robot\Robot1\PCToRbt.cs" />
+    <Compile Include="MainWindow\ShowInfo\MainWindow.ShowInfo.cs" />
+    <Compile Include="MainWindow\MainWndow.Others.cs" />
+    <Compile Include="MainWindow\Robot\Robot1\MainWindow.RobotConfig.cs" />
+    <Compile Include="MainWindow\Robot\Robot2\MainWindow.Robot2.cs" />
+    <Compile Include="MainWindow\Robot\Robot2\MainWindow.Robot2.Reserve.cs" />
+    <Compile Include="MainWindow\Robot\Robot2\MainWindow.Robot2Config.cs" />
+    <Compile Include="MainWindow\Voice\MainWindow.Voice.cs" />
+    <Compile Include="UIOperation\Operation.Enums.cs" />
+    <Compile Include="UIOperation\OperationWnd.xaml.cs">
+      <DependentUpon>OperationWnd.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="StartWindow\Program.cs" />
+    <Compile Include="StartWindow\StartWindow.xaml.cs">
+      <DependentUpon>StartWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIOperation\UCGridMark.xaml.cs">
+      <DependentUpon>UCGridMark.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIOperation\UCInputMark.xaml.cs">
+      <DependentUpon>UCInputMark.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIRbtCalib\UCCalibRotateCenter.xaml.cs">
+      <DependentUpon>UCCalibRotateCenter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIRbtCalib\UCCalibSt.xaml.cs">
+      <DependentUpon>UCCalibSt.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIRbtCalib\UCRbtTeachComprehensive.xaml.cs">
+      <DependentUpon>UCRbtTeachComprehensive.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UIRbtCalib\WinRobotCalib.xaml.cs">
+      <DependentUpon>WinRobotCalib.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainUI\WinMain1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="MainWindow\Robot\Robot1\MainWindow.Robot.cs" />
+    <Compile Include="MainWindow\PLC\MainWindow.PLC.cs" />
+    <Page Include="MainUI\WinMain2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainUI\WinMainSmall2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow\Capacity\ProductivityReport.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIOperation\OperationWnd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="StartWindow\StartWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIOperation\UCGridMark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIOperation\UCInputMark.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIRbtCalib\UCCalibRotateCenter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIRbtCalib\UCCalibSt.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIRbtCalib\UCRbtTeachComprehensive.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UIRbtCalib\WinRobotCalib.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DealCIM\DealCIM.csproj">
+      <Project>{b8203736-3a4c-4b7e-ba54-12ab3b0deba2}</Project>
+      <Name>DealCIM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DealIO\DealIO.csproj">
+      <Project>{DDBA8EC6-C123-48A5-A0F6-85607194CC7E}</Project>
+      <Name>DealIO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DealMedia\DealMedia.csproj">
+      <Project>{54C59074-7549-4DF5-8549-97AC9E64C236}</Project>
+      <Name>DealMedia</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Main_Ex\Main_EX.csproj">
+      <Project>{3681d245-51cd-41e9-8031-93617adc66c8}</Project>
+      <Name>Main_EX</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\StationDataManager\StationDataManager.csproj">
+      <Project>{7e1c1312-9c70-4593-8fa4-c8d83d42f2ba}</Project>
+      <Name>StationDataManager</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 和 x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\机器人.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\" />
+    <Folder Include="MainWindow\Comprehensive\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Motor.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Admin.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Password.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\keyboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Logout.jpg" />
+    <Resource Include="Images\Login.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="机器人.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\尚实图智Big.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\finevision.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\报警.png" />
+    <Resource Include="Images\放大镜.ico" />
+    <Resource Include="Images\机器人2.png" />
+    <Resource Include="Images\补偿.gif" />
+    <Resource Include="Images\运行信息.png" />
+    <Resource Include="Images\运行数据.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\1.png" />
+    <Resource Include="Images\2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\11.png" />
+    <Resource Include="Images\12.png" />
+    <Resource Include="Images\13.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

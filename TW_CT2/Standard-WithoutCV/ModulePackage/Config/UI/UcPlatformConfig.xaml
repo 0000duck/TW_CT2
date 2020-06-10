@@ -1,0 +1,74 @@
+﻿<Page x:Class="ModulePackage.UcPlatformConfig"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+			 xmlns:sys="clr-namespace:System;assembly=mscorlib"
+			 xmlns:PU="clr-namespace:Panuon.UI;assembly=Panuon.UI"
+             xmlns:local="clr-namespace:ModulePackage"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="600" Loaded="Page_Loaded">
+	<Page.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="pack://application:,,,/ModulePackage;component/Themes/BoxRadioButton.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+			<local:EnumToBooleanConverter x:Key="EnumToBooleanConverter"/>
+		</ResourceDictionary>
+	</Page.Resources>
+    <Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height=".4*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height=".4*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<Grid Grid.ColumnSpan="2">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Label x:Name="lblStatus" Content="未选择类型" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Black"/>
+			<PU:PUCheckBox x:Name="ckHorizontal" Content="单电极水平放置" 
+						   IsChecked="{Binding Path=IsHorizontal, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+						   Grid.Column="1" CheckBoxStyle="Switch" FontSize="20" FontWeight="ExtraBlack" 
+						   CoverBrush="{DynamicResource {x:Static SystemColors.MenuHighlightBrushKey}}"/>
+			<Separator HorizontalAlignment="Stretch" Height="2" Grid.ColumnSpan="3" VerticalAlignment="Bottom"/>
+		</Grid>
+
+		<RadioButton Grid.Row="1" Margin="1" Style="{StaticResource BoxRadioButton}"
+					 IsChecked="{Binding Path=PlatformPlacePosEnum, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static local:PlatformPlacePos_Enum.LeftTop}}"
+					 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+					 HorizontalContentAlignment="Center">
+			<Image Source="pack://application:,,,/ModulePackage;component/Resources/Image/PlatConfig/PlatLT.png"/>
+		</RadioButton>
+
+		<RadioButton Grid.Row="1" Grid.Column="1" Margin="1" Style="{StaticResource BoxRadioButton}"
+					 IsChecked="{Binding Path=PlatformPlacePosEnum, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static local:PlatformPlacePos_Enum.RightTop}}" 
+					 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+					 HorizontalContentAlignment="Center">
+			<Image Source="pack://application:,,,/ModulePackage;component/Resources/Image/PlatConfig/PlatRT.png"/>
+		</RadioButton>
+
+		<RadioButton Grid.Row="2" Margin="1" Style="{StaticResource BoxRadioButton}"
+					 IsChecked="{Binding Path=PlatformPlacePosEnum, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static local:PlatformPlacePos_Enum.LeftBottom}}" 
+					 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+					 HorizontalContentAlignment="Center" >
+			<Image Source="pack://application:,,,/ModulePackage;component/Resources/Image/PlatConfig/PlatLB.png"/>
+		</RadioButton>
+
+		<RadioButton Grid.Row="2" Grid.Column="1" Margin="1" Style="{StaticResource BoxRadioButton}"
+					 IsChecked="{Binding Path=PlatformPlacePosEnum, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static local:PlatformPlacePos_Enum.RightBottom}}"
+					 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+					 HorizontalContentAlignment="Center">
+			<Image Source="pack://application:,,,/ModulePackage;component/Resources/Image/PlatConfig/PlatRB.png"/>
+		</RadioButton>
+
+		<Separator Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+		<Label x:Name="lblInstruction" Content="备注：" Grid.Row="3" FontSize="16" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+	</Grid>
+</Page>

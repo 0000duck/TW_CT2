@@ -1,0 +1,35 @@
+﻿<Window x:Class="Main.OperationWnd"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Main"
+        mc:Ignorable="d"
+        Title="OperationWnd" Height="450" Width="800" BorderThickness="20" WindowStyle="None" AllowsTransparency="True">
+	<Window.Effect>
+		<DropShadowEffect Opacity="0.3" BlurRadius="15" ShadowDepth="1"/>
+	</Window.Effect>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="7*"/>
+			<RowDefinition Height="1.5*"/>
+		</Grid.RowDefinitions>
+		<Rectangle Fill="CornflowerBlue" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+		<Label Content="手动抛料" FontSize="18" Foreground="White" VerticalAlignment="Center" FontWeight="Black" MouseLeftButtonDown="Label_MouseLeftButtonDown"/>
+
+		<TabControl x:Name="tab" Grid.Row="1">
+			<TabItem Header="手动输入">
+				<local:UCInputMark x:Name="ucInputMark"></local:UCInputMark>
+			</TabItem>
+			<TabItem Header="阵列选择">
+				<local:UCGridMark x:Name="ucGridMark"></local:UCGridMark>
+			</TabItem>
+		</TabControl>
+
+		<Grid Grid.Row="2">
+			<Button x:Name="btnConfirm" Content="确认" Height="40" Width="80" Click="BtnConfirm_Click" Margin="102,0,278,0" />
+			<Button x:Name="btnCancel" Content="取消" Height="40" Width="80" Click="BtnCancel_Click" Margin="275,0,105,0" />
+		</Grid>
+	</Grid>
+</Window>

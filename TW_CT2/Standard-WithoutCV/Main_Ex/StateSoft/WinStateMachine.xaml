@@ -1,0 +1,44 @@
+﻿<BasicClass:BaseWindow x:Class="Main_EX.WinStateMachine"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:BasicClass="clr-namespace:BasicClass;assembly=BasicClass"   
+        xmlns:ControlLib="clr-namespace:ControlLib;assembly=ControlLib"
+        Title="运行状态" Height="415" Width="525" WindowStartupLocation="CenterScreen" Loaded="BaseWindow_Loaded">
+
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />-->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid Background="#FFEDF7F4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <RadioButton Content="复位" Height="30" HorizontalAlignment="Left" Margin="60,0" Name="rdbReset" VerticalAlignment="Center" FontSize="20" />
+        <RadioButton Content="自动运行" Height="30" HorizontalAlignment="Left" Margin="60,0" Name="rdbRun" VerticalAlignment="Center" Grid.Column="1" FontSize="20" />
+        <RadioButton Content="手动运行" Height="30" HorizontalAlignment="Left" Margin="60,0" Name="rdbMannual" VerticalAlignment="Center" Grid.Row="1" FontSize="20" />
+        <RadioButton Content="待机" Height="30" HorizontalAlignment="Left" Margin="60,0" Name="rdbIdle" VerticalAlignment="Center" Grid.Column="1" Grid.Row="1" FontSize="20" />
+        <RadioButton Content="暂停" Height="30" HorizontalAlignment="Left" Margin="60,0" Name="rdbPause" VerticalAlignment="Center" Grid.Row="2" FontSize="20" />
+        <RadioButton Content="报警" Height="30" HorizontalAlignment="Left" Margin="60,0" Name="rdbAlarm" VerticalAlignment="Center" Grid.Column="1" Grid.Row="2" FontSize="20" />
+        <RadioButton Content="停止" Height="30" HorizontalAlignment="Left" Margin="60,0" Name="rdbStop" VerticalAlignment="Center" Grid.Row="3" FontSize="20" />
+        <RadioButton Content="空运转" Height="30" HorizontalAlignment="Left" Margin="60,0" Name="rdbNull" VerticalAlignment="Center" Grid.Column="1" Grid.Row="3" FontSize="20" />
+        <ControlLib:ButtonBase Content="保  存" Grid.Row="5" Height="35" HorizontalAlignment="Center" Margin="0" Name="btnSave" VerticalAlignment="Center" Width="95" Click="btnSave_Click" FontSize="14" Background="#FFF7F7F7" BorderBrush="#FFCCCCCC" />
+        <ControlLib:ButtonBase Content="退  出" Height="35" HorizontalAlignment="Center" Margin="0" Name="btnClose" VerticalAlignment="Center" Width="95" Grid.Column="1" Grid.Row="5" Click="btnClose_Click" FontSize="14" Background="#FFF7F7F7" BorderBrush="#FFCCCCCC"/>
+        <RadioButton Content="校准" Height="30" HorizontalAlignment="Left" Margin="60,10" x:Name="rdbCalib" VerticalAlignment="Center" Grid.Row="4" FontSize="20" />
+    </Grid>
+</BasicClass:BaseWindow>

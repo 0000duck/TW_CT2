@@ -1,0 +1,36 @@
+﻿<BasicClass:BaseWindow x:Class="DealConfigFile.WinSetRobotPoints"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ControlLib="clr-namespace:ControlLib;assembly=ControlLib" 
+        xmlns:toolkit="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:DealConfigFile="clr-namespace:DealConfigFile"
+        xmlns:BasicClass="clr-namespace:BasicClass;assembly=BasicClass"
+        xmlns:Common="clr-namespace:Common;assembly=Common"
+        Title="设置机器人点位基准" Height="650" Width="600" WindowStartupLocation="CenterScreen" Closing="BaseMetroWindow_Closing" Loaded="BaseMetroWindow_Loaded" BorderBrush="#CC119EDA" BorderThickness="1" ResizeMode="NoResize" MouseRightButtonUp="BaseWindow_MouseRightButtonUp">
+
+	<Grid Name="gdLayout"  Background="#FFEDF7F4">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*" />
+			<RowDefinition Height="*" />
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+			<ColumnDefinition Width="*" />
+		</Grid.ColumnDefinitions>
+		<DealConfigFile:Adjust4 x:Name="rstd1" Grid.Row="0" Grid.Column="0" WAuthority="True" PathStd="2"></DealConfigFile:Adjust4>
+		<DealConfigFile:Adjust4 x:Name="rstd2" Grid.Row="0" Grid.Column="1" WAuthority="True" PathStd="2"></DealConfigFile:Adjust4>
+		<DealConfigFile:Adjust4 x:Name="rstd3" Grid.Row="0" Grid.Column="2" WAuthority="True" PathStd="2"></DealConfigFile:Adjust4>
+		<DealConfigFile:Adjust4 x:Name="rstd4" Grid.Row="0" Grid.Column="3" WAuthority="True" PathStd="2"></DealConfigFile:Adjust4>
+		<DealConfigFile:Adjust4 x:Name="rstd5" Grid.Row="1" Grid.Column="0" WAuthority="True" PathStd="2"></DealConfigFile:Adjust4>
+		<DealConfigFile:Adjust4 x:Name="rstd6" Grid.Row="1" Grid.Column="1" WAuthority="True" PathStd="2"></DealConfigFile:Adjust4>
+		<DealConfigFile:Adjust4 x:Name="rstd7" Grid.Row="1" Grid.Column="2" WAuthority="True" PathStd="2"></DealConfigFile:Adjust4>
+		<DealConfigFile:Adjust4 x:Name="rstd8" Grid.Row="1" Grid.Column="3" WAuthority="True" PathStd="2"></DealConfigFile:Adjust4>
+		<DealConfigFile:Adjust4 x:Name="rstd9" Grid.Row="2" Grid.Column="0" WAuthority="True" PathStd="2"></DealConfigFile:Adjust4>
+		<DealConfigFile:Adjust4 x:Name="rstd10" Grid.Row="2" Grid.Column="1" WAuthority="True" PathStd="2"></DealConfigFile:Adjust4>
+		<DealConfigFile:Adjust4 x:Name="rstd11" Grid.Row="2" Grid.Column="2" WAuthority="True" PathStd="2"></DealConfigFile:Adjust4>
+		<DealConfigFile:Adjust4 x:Name="rstd12" Grid.Row="2" Grid.Column="3" WAuthority="True" PathStd="2"></DealConfigFile:Adjust4>
+	</Grid>
+</BasicClass:BaseWindow>

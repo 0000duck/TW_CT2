@@ -1,0 +1,94 @@
+﻿<Window x:Class="Main.WinRobotCalib"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Main"
+        xmlns:module ="clr-namespace:ModulePackage;assembly=ModulePackage"
+        mc:Ignorable="d"
+        Title="WinRobotCalib" Height="768" Width="600" Closing="Window_Closed">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ModulePackage;component/Themes/BoxRadioButton.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <module:EnumToBooleanConverter x:Key="EnumToBooleanConverter"/>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="1.2*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Image Source="/机器视觉控制处理软件;component/Images/11.png"></Image>
+            <RadioButton Name="rbSelectSt2_1" GroupName="St"  Style="{StaticResource BoxRadioButton}" Margin="232,33,287.6,203" >
+                <Image Source="/机器视觉控制处理软件;component/Images/12.png"  Height="86" Width="63"/>
+            </RadioButton>
+            <RadioButton Name="rbSelectSt2_2" GroupName="St" Style="{StaticResource BoxRadioButton}" Margin="306,33,212.6,205" >
+                <Image Source="/机器视觉控制处理软件;component/Images/13.png"  Height="86" Width="63"></Image>
+            </RadioButton>
+            <RadioButton Name="rbSelectSt3_1" GroupName="St" Style="{StaticResource BoxRadioButton}" Margin="415,28,101.6,210" >
+                <Image Source="/机器视觉控制处理软件;component/Images/12.png"  Height="98" Width="63">
+                </Image>
+                <RadioButton.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45"/>
+                        <TranslateTransform X="11.871" Y="35.837"/>
+                    </TransformGroup>
+                </RadioButton.RenderTransform>
+            </RadioButton>
+            <RadioButton Name="rbSelectSt3_2" GroupName="St" Style="{StaticResource BoxRadioButton}" Margin="483,118,33.6,118">
+                <Image Source="/机器视觉控制处理软件;component/Images/13.png"  Height="86" Width="63">
+                </Image>
+                <RadioButton.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </RadioButton.RenderTransform>
+            </RadioButton>
+            <RadioButton Name="rbSelectSt1_1" GroupName="St" Style="{StaticResource BoxRadioButton}" IsChecked="True" Margin="60,125,458.6,111" >
+                <Image Source="/机器视觉控制处理软件;component/Images/12.png" Height="86" Width="63" >
+                </Image>
+                <RadioButton.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-45"/>
+                        <TranslateTransform X="11.871" Y="35.837"/>
+                    </TransformGroup>
+                </RadioButton.RenderTransform>
+            </RadioButton>
+            <RadioButton Name="rbSelectSt1_2" GroupName="St" Style="{StaticResource BoxRadioButton}" Margin="125,111,392.6,127" >
+                <Image Source="/机器视觉控制处理软件;component/Images/13.png" Height="86" Width="63">
+                </Image>
+                <RadioButton.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-45"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </RadioButton.RenderTransform>
+            </RadioButton>
+        </Grid>
+        <Grid Grid.Row="1">
+            <TabControl>
+                <TabItem Header="示教">
+                    <local:UCRbtTeachComprehensive></local:UCRbtTeachComprehensive>
+                </TabItem>
+                <TabItem Header="旋转中心标定">
+                    <local:UCCalibRotateCenter x:Name="ucCalibRC"/>
+                </TabItem>
+                <TabItem Header="工位标定">
+                    <local:UCCalibSt/>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Grid>
+</Window>

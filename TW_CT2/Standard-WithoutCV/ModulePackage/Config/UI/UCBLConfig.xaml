@@ -1,0 +1,62 @@
+﻿<Page x:Class="ModulePackage.UcBLConfig"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ModulePackage"
+             mc:Ignorable="d" 
+             d:DesignHeight="400" d:DesignWidth="600" Background="White" Loaded="Page_Loaded">
+	<Page.Resources>
+		<ResourceDictionary>
+			<ResourceDictionary.MergedDictionaries>
+				<ResourceDictionary Source="pack://application:,,,/ModulePackage;component/Themes/BoxRadioButton.xaml"/>
+			</ResourceDictionary.MergedDictionaries>
+			<local:EnumToBooleanConverter x:Key="EnumToBooleanConverter"/>
+		</ResourceDictionary>
+	</Page.Resources>
+    <Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height=".4*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height=".4*"/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="*"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+		<Label x:Name="lblStatus" Content="未选择类型" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" FontWeight="Black"/>
+		<Separator HorizontalAlignment="Stretch" Height="2" Grid.ColumnSpan="2" VerticalAlignment="Bottom"/>
+
+		<RadioButton Grid.Row="1" Margin="1" Style="{StaticResource BoxRadioButton}"
+					 IsChecked="{Binding Path=DirBLEnum, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static local:DirBL_Enum.正常}}" 
+					 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+					 HorizontalContentAlignment="Center">
+			<Image Source="pack://application:,,,/ModulePackage;component/Resources/Image/BLConfig/BL0.png"/>
+		</RadioButton>
+
+		<RadioButton Grid.Row="1" Grid.Column="1" Margin="1" Style="{StaticResource BoxRadioButton}"
+					 IsChecked="{Binding Path=DirBLEnum, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static local:DirBL_Enum.逆时针90度}}" 
+					 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+					 HorizontalContentAlignment="Center">
+			<Image Source="pack://application:,,,/ModulePackage;component/Resources/Image/BLConfig/BL90.png"/>
+		</RadioButton>
+
+		<RadioButton Grid.Row="2" Margin="1" Style="{StaticResource BoxRadioButton}"
+					 IsChecked="{Binding Path=DirBLEnum, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static local:DirBL_Enum.逆时针180度}}" 
+					 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+					 HorizontalContentAlignment="Center">
+			<Image Source="pack://application:,,,/ModulePackage;component/Resources/Image/BLConfig/BL180.png"/>
+		</RadioButton>
+
+		<RadioButton Grid.Row="2" Grid.Column="1" Margin="1" Style="{StaticResource BoxRadioButton}"
+					 IsChecked="{Binding Path=DirBLEnum, Converter={StaticResource EnumToBooleanConverter}, ConverterParameter={x:Static local:DirBL_Enum.顺时针90度}}" 
+					 HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+					 HorizontalContentAlignment="Center">
+			<Image Source="pack://application:,,,/ModulePackage;component/Resources/Image/BLConfig/BL270.png"/>
+		</RadioButton>
+		
+		<Separator Grid.Row="3" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+		<Label x:Name="lblInstruction" Content="备注：" Grid.Row="3" FontSize="16" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+	</Grid>
+</Page>

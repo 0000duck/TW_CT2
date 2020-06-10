@@ -1,0 +1,16 @@
+﻿<Window x:Class="Main.ProductivityReport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ProductivityReport" Height="300" Width="650" Loaded="Window_Loaded">
+    <Grid>
+        <DataGrid AutoGenerateColumns="False" IsReadOnly="True" ItemsSource="{Binding}" HorizontalAlignment="Stretch" Name="ProReportDG" VerticalAlignment="Stretch" >
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Date}" Width="150" Header="日期"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding PreciseSUM}" Width="100" Header="精定位产量"></DataGridTextColumn>
+				<DataGridTextColumn Binding="{Binding PreciseNG}" Width="100" Header="精定位NG"></DataGridTextColumn>
+				<DataGridTextColumn Binding="{Binding WastageNG1}" Width="100" Header="残材1NG"></DataGridTextColumn>
+                <DataGridTextColumn Binding="{Binding WastageNG2}" Width="100" Header="残材2NG"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>

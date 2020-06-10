@@ -1,0 +1,45 @@
+﻿<BasicClass:BaseWindow x:Class="DealConfigFile.WinSetWorkType"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:MetroControls="http://metro.mahapps.com/winfx/xaml/MetroControls"
+             xmlns:ControlLib="clr-namespace:ControlLib;assembly=ControlLib"
+             xmlns:BasicClass="clr-namespace:BasicClass;assembly=BasicClass"
+             mc:Ignorable="d" 
+             Height="380" Width="600" BorderBrush="#CC119EDA" BorderThickness="1" WAuthority="True" Title="运行模式设定" ShowCloseButton="True" ShowMaxRestoreButton="False" ShowMinButton="False" WindowStartupLocation="CenterScreen" Loaded="BaseMetroWindow_Loaded" Closing="BaseMetroWindow_Closing">
+    <Window.Resources >
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <!--<ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />-->
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+
+    <Grid Name="gdLayout" Margin="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#FFEDF7F4" >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="460*" />
+                <ColumnDefinition Width="130*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+            <ControlLib:ButtonBase Background="#FFF7F7F7" BorderBrush="#CC119EDA" Content="保  存" FontSize="18" FontStyle="Normal" FontWeight="SemiBold" Height="45" HorizontalAlignment="Center" IsEnabled="True" Margin="0" Name="btnSave" ToolTip="保存参数到本地" VerticalAlignment="Center" Width="100" Click="btnSave_Click" Grid.Row="1" Grid.Column="1" EAuthority="False" WAuthority="False" />
+                
+                <DataGrid  AllowDrop="True" AreRowDetailsFrozen="True" AutoGenerateColumns="False" Background="White" BorderThickness="1" CanUserAddRows="False" CanUserResizeColumns="False" CanUserSortColumns="False" FontSize="13" GridLinesVisibility="All" IsReadOnly="false" ItemsSource="{Binding}" Name="dgSetWork" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Grid.RowSpan="4" Margin="5">
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Binding="{Binding No}" Header="序号" Width="45" />
+                        <DataGridCheckBoxColumn Binding="{Binding BlSelect}" Header="选择" Width="50" />                        
+                        <DataGridTextColumn Binding="{Binding Annotation}" Header="注释(工程师以上权限可以修改)" Width="350" />
+                    </DataGrid.Columns>
+                </DataGrid>
+        <ControlLib:ButtonBase Background="#FFF7F7F7" BorderBrush="#CC119EDA" Content="退   出" EAuthority="False" FontSize="18" FontStyle="Normal" FontWeight="SemiBold" Height="45" HorizontalAlignment="Center" IsEnabled="True" Margin="0" Name="btnClose" ToolTip="保存参数到本地" VerticalAlignment="Center" WAuthority="False" Width="100" Grid.Column="1" Grid.Row="2" Click="btnClose_Click" />
+    </Grid>
+</BasicClass:BaseWindow>

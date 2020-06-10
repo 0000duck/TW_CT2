@@ -1,0 +1,59 @@
+﻿<Window x:Class="ModulePackage.WndHardwareConfig"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ModulePackage"
+			 xmlns:PU="clr-namespace:Panuon.UI;assembly=Panuon.UI"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="600" Width="1000" Height="800" Background="White" WindowStyle="None" Closing="Window_Closing">
+	<Window.Effect>
+		<DropShadowEffect/>
+	</Window.Effect>
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="12*"/>
+			<RowDefinition Height="*"/>
+		</Grid.RowDefinitions>
+		<Rectangle Fill="LightGray" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+		<Label Content="硬件配置" FontSize="24" Foreground="Black" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalAlignment="Center" FontWeight="Black" MouseLeftButtonDown="Label_MouseLeftButtonDown"/>
+		<Separator HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Height="2"/>
+		<Grid Grid.Row="1">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="4*"/>
+			</Grid.ColumnDefinitions>
+			<Grid Grid.Column="0">
+				<Grid.RowDefinitions>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+					<RowDefinition Height="*"/>
+				</Grid.RowDefinitions>
+				<PU:PURadioButton x:Name="rbtnBot" Content="机器人方向设置" Grid.Row="0" RadioButtonStyle="Button" Background="CornflowerBlue" CoverBrush="LightBlue" Foreground="White" FontWeight="Black" FontSize="24" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Checked="RbtnBot_Checked"/>
+				<PU:PURadioButton x:Name="rbtnBL" Content="背光方向设置" Grid.Row="1" RadioButtonStyle="Button" Background="CornflowerBlue" CoverBrush="LightBlue" Foreground="White" FontWeight="Black" FontSize="24" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" Checked="RbtnBL_Checked"/>
+				<PU:PURadioButton x:Name="rbtnDisplay" Content="画面显示设置" Grid.Row="2" RadioButtonStyle="Button" Background="CornflowerBlue" CoverBrush="LightBlue" Foreground="White" FontWeight="Black" FontSize="24" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" Checked="RbtnDisplay_Checked"/>
+				<PU:PURadioButton x:Name="rbtnPlatform" Content="平台放片设置" Grid.Row="3" RadioButtonStyle="Button" Background="CornflowerBlue" CoverBrush="LightBlue" Foreground="White" FontWeight="Black" FontSize="24" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" Checked="RbtnPlatform_Checked"/>
+				<PU:PURadioButton x:Name="rbtnCstPhoto" Content="拍照方向设置" Grid.Row="4" RadioButtonStyle="Button" Background="CornflowerBlue" CoverBrush="LightBlue" Foreground="White" FontWeight="Black" FontSize="24" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Checked="RbtnCstPhoto_Checked"/>
+				<PU:PURadioButton x:Name="rbtnCstInsert" Content="插栏方向设置" Grid.Row="5" RadioButtonStyle="Button" Background="CornflowerBlue" CoverBrush="LightBlue" Foreground="White" FontWeight="Black" FontSize="24" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" Checked="RbtnCstInsert_Checked"/>
+				<PU:PURadioButton x:Name="rbtnZ" Content="卡塞Z轴设置" Grid.Row="6" RadioButtonStyle="Button" Background="CornflowerBlue" CoverBrush="LightBlue" Foreground="White" FontWeight="Black" FontSize="24" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" HorizontalContentAlignment="Center" Checked="RbtnZ_Checked"/>
+			</Grid>
+			<ContentControl x:Name="contentControl" Grid.Column="1"/>
+		</Grid>
+		<Grid Grid.Row="2">
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Separator Grid.ColumnSpan="4" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="1"/>
+			<PU:PUButton Content="确 认" x:Name="btnConfirm" Grid.Column="1" Click="BtnConfirm_Click" ButtonStyle="Hollow" Background="CornflowerBlue" BorderCornerRadius="3" CoverBrush="CornflowerBlue" BorderBrush="CornflowerBlue" FontWeight="Black" FontSize="24" Margin="5"/>
+			<PU:PUButton Content="取 消" x:Name="btnCancel" Grid.Column="2" Click="BtnCancel_Click" ButtonStyle="Hollow" Background="CornflowerBlue" BorderCornerRadius="3" CoverBrush="CornflowerBlue" BorderBrush="CornflowerBlue" FontWeight="Black" FontSize="24" Margin="5"/>
+		</Grid>
+	</Grid>
+</Window>

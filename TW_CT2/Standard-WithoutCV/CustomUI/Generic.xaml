@@ -1,0 +1,12 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:CustomUI">
+
+	<ResourceDictionary.MergedDictionaries>
+		<ResourceDictionary Source="pack://application:,,,/CustomUI;component/Themes/FIcon.xaml"/>
+		<ResourceDictionary Source="pack://application:,,,/CustomUI;component/Themes/FButton.xaml"/>
+		<ResourceDictionary Source="pack://application:,,,/CustomUI;component/Themes/FRadioButton.xaml"/>
+		<ResourceDictionary Source="pack://application:,,,/CustomUI;component/Themes/FCheckBox.xaml"/>
+	</ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

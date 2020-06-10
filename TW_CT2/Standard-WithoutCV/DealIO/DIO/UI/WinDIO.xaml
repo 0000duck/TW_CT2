@@ -1,0 +1,66 @@
+﻿<BasicClass:BaseMetroWindow x:Class="DealIO.WinDIO"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:MetroControls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:BasicClass="clr-namespace:BasicClass;assembly=BasicClass"
+        xmlns:ControlLib="clr-namespace:ControlLib;assembly=ControlLib" 
+        Title="DIO设置" Height="384" Width="473" WindowStartupLocation="CenterScreen" Loaded="BaseMetroWindow_Loaded">
+
+    <Window.Resources >
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Colors.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Accents/BaseLight.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid  HorizontalAlignment="Stretch" Margin="0" Name="grid1" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="282*" />
+                <ColumnDefinition Width="355*" />
+            </Grid.ColumnDefinitions>
+            <Label Content="串口设置：" Height="28" HorizontalAlignment="Center" Margin="0" Name="label1" VerticalAlignment="Center" />
+            <ComboBox Grid.Column="1" Height="40" HorizontalAlignment="Center" Margin="0" Name="cboPort" VerticalAlignment="Center" Width="100" >
+                <ComboBoxItem Content="Null" />
+                <ComboBoxItem Content="Com1" IsSelected="True"/>
+                <ComboBoxItem Content="Com2" />
+                <ComboBoxItem Content="Com3" />
+            </ComboBox>
+        </Grid>
+        <Grid Grid.Row="1"  HorizontalAlignment="Stretch" Margin="0" Name="grid2" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <ComboBox Height="40" HorizontalAlignment="Center" Margin="0" Name="cboChannel" VerticalAlignment="Center" Width="100" Grid.Column="1" >
+                <ComboBoxItem Content="通道0" IsSelected="True"/>
+                <ComboBoxItem Content="通道1" />
+                <ComboBoxItem Content="通道2" />                
+            </ComboBox>
+            <Label Content="通道设置：" Height="28" HorizontalAlignment="Center" Margin="0" Name="label2" VerticalAlignment="Center" />
+            <Label Content="On/Off：" Height="28" HorizontalAlignment="Center" Margin="0" Name="label3" VerticalAlignment="Center" Grid.Column="2" />
+            <ControlLib:MTSwitchButton Grid.Column="3" Height="30" HorizontalAlignment="Center" Margin="0" Name="tsbOn" VerticalAlignment="Center" Width="55"/>
+        </Grid>
+        <Button Content="写入IO" Height="30" HorizontalAlignment="Center" Margin="0" Name="btnSetIO" VerticalAlignment="Center" Width="85" Grid.Row="2" Click="btnSetIO_Click" />
+        <Grid Grid.Row="3"  HorizontalAlignment="Stretch" Margin="0" Name="grid3" VerticalAlignment="Stretch">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="247*" />
+                <ColumnDefinition Width="245*" />
+            </Grid.ColumnDefinitions>
+            <Button Content="保  存" Height="30" HorizontalAlignment="Center" Margin="0" Name="btnSave" VerticalAlignment="Center" Width="85" Click="btnSave_Click" />
+            <Button Content="退  出" Height="30" HorizontalAlignment="Center" Margin="0" Name="btnClose" VerticalAlignment="Center" Width="85" Grid.Column="1" Click="btnClose_Click" />
+        </Grid>
+    </Grid>
+</BasicClass:BaseMetroWindow>

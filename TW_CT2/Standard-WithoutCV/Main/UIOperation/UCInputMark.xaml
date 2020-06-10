@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="Main.UCInputMark"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Main"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+	<Grid>
+		<Grid Grid.Row="1">
+			<Grid.Effect>
+				<DropShadowEffect BlurRadius="15" ShadowDepth="1" Opacity="0.3"/>
+			</Grid.Effect>
+			<Grid.ColumnDefinitions>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+				<ColumnDefinition Width="*"/>
+			</Grid.ColumnDefinitions>
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+				<RowDefinition Height="*"/>
+			</Grid.RowDefinitions>
+			<Label Content="抛料序号:(有效分隔符：空格, 逗号(英文输入), /, ;(英文输入))" Grid.ColumnSpan="4" FontSize="18" FontWeight="Black" VerticalAlignment="Bottom" HorizontalAlignment="Left"/>
+			<TextBox x:Name="tbIndex" Grid.Row="1" Grid.ColumnSpan="4" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="400" FontSize="18" VerticalContentAlignment="Center"/>
+
+		</Grid>
+	</Grid>
+</UserControl>
